@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Santé - PHARMCI</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pharm.css">
+    <link rel="stylesheet" href="css/espace.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-pills me-2"></i>
+                PHARMCI
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="A-propos.html">À Propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pharmacie.html">Pharmacies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#espace">Espace Santé</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section-pharma">
+        <div class="container">
+            <div class="hero-content-pharma animate-fade-in">
+                <h1 class="hero-title-pharma">Espace Santé</h1>
+                <p class="hero-subtitle-pharma">
+                    Conseils, astuces et informations pour votre bien-être au quotidien
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section principale -->
+    <section id="espace" class="espace-section">
+        <div class="container">
+            <!-- Onglets de navigation -->
+            <div class="espace-tabs mb-5">
+                <button class="tab-btn active" data-tab="conseils">
+                    <i class="fas fa-lightbulb me-2"></i>Conseils Bien-Être
+                </button>
+                <button class="tab-btn" data-tab="astuces">
+                    <i class="fas fa-star me-2"></i>Astuces Santé
+                </button>
+                <button class="tab-btn" data-tab="symptomes">
+                    <i class="fas fa-stethoscope me-2"></i>Guide des Symptômes
+                </button>
+            </div>
+
+            <!-- TAB 1: Conseils Bien-Être -->
+            <div id="conseils" class="tab-content active">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title text-center mb-3">Conseils pour votre Bien-Être</h2>
+                        <p class="section-subtitle text-center">
+                            Découvrez nos recommandations pour une meilleure qualité de vie
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Conseil 1: Sommeil -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="conseil-card">
+                            <div class="conseil-icon">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <h3>Sommeil Réparateur</h3>
+                            <p class="conseil-text">Dormez 7-9 heures par nuit. Créez une routine régulière en vous couchant à la même heure chaque jour. Évitez les écrans 30 minutes avant le coucher.</p>
+                            <div class="conseil-tips">
+                                <strong>Conseils:</strong>
+                                <ul>
+                                    <li>Chambre sombre et fraîche (18-19°C)</li>
+                                    <li>Pas de café après 14h</li>
+                                    <li>Exercice régulier (3-4h avant le coucher)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conseil 2: Nutrition -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="conseil-card">
+                            <div class="conseil-icon">
+                                <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <h3>Alimentation Équilibrée</h3>
+                            <p class="conseil-text">Mangez varié et équilibré. Privilégiez les fruits, légumes, protéines maigres et grains complets. Limitez le sucre et le sel.</p>
+                            <div class="conseil-tips">
+                                <strong>À retenir:</strong>
+                                <ul>
+                                    <li>5 portions de fruits/légumes par jour</li>
+                                    <li>Hydratez-vous (1.5-2L d'eau)</li>
+                                    <li>Petit déjeuner équilibré</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conseil 3: Exercice -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="conseil-card">
+                            <div class="conseil-icon">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <h3>Activité Physique</h3>
+                            <p class="conseil-text">Pratiquez 150 minutes d'activité modérée par semaine. Le sport renforce le cœur, améliore l'humeur et aide à maintenir un poids sain.</p>
+                            <div class="conseil-tips">
+                                <strong>Idées d'activités:</strong>
+                                <ul>
+                                    <li>Marche quotidienne (30 min)</li>
+                                    <li>Natation ou yoga</li>
+                                    <li>Renforcement musculaire 2x/semaine</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conseil 4: Stress -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="conseil-card">
+                            <div class="conseil-icon">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                            <h3>Gestion du Stress</h3>
+                            <p class="conseil-text">Réduisez le stress par la méditation, la respiration profonde et les moments de détente. Un esprit calme favorise une meilleure santé.</p>
+                            <div class="conseil-tips">
+                                <strong>Techniques efficaces:</strong>
+                                <ul>
+                                    <li>Méditation (10 min/jour)</li>
+                                    <li>Respirations profondes</li>
+                                    <li>Temps pour vos loisirs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conseil 5: Hydratation -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="conseil-card">
+                            <div class="conseil-icon">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <h3>Hydratation</h3>
+                            <p class="conseil-text">Buvez suffisamment d'eau tout au long de la journée. L'eau aide à réguler la température, transporter les nutriments et éliminer les toxines.</p>
+                            <div class="conseil-tips">
+                                <strong>Conseils pratiques:</strong>
+                                <ul>
+                                    <li>1.5 à 2L par jour minimum</li>
+                                    <li>Buvez dès le matin</li>
+                                    <li>Évitez les boissons sucrées</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conseil 6: Santé Mentale -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="conseil-card">
+                            <div class="conseil-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3>Santé Mentale</h3>
+                            <p class="conseil-text">Prenez soin de votre bien-être mental. Maintenez des relations sociales, pratiquez l'auto-compassion et cherchez de l'aide si nécessaire.</p>
+                            <div class="conseil-tips">
+                                <strong>Actions quotidiennes:</strong>
+                                <ul>
+                                    <li>Connexions sociales régulières</li>
+                                    <li>Activités plaisantes</li>
+                                    <li>Consulter si sentiments persistants</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: Astuces Santé -->
+            <div id="astuces" class="tab-content">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title text-center mb-3">Astuces de Santé au Quotidien</h2>
+                        <p class="section-subtitle text-center">
+                            Des petits gestes simples qui font une grande différence
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Astuce 1 -->
+                    <div class="col-md-6">
+                        <div class="astuce-card">
+                            <div class="astuce-header">
+                                <h3><i class="fas fa-hand-holding-water me-2"></i>Lavez-vous les mains régulièrement</h3>
+                            </div>
+                            <p>Lavez vos mains pendant 20 secondes avec du savon et de l'eau, surtout avant de manger et après être allé aux toilettes. Cela prévient de nombreuses infections.</p>
+                        </div>
+                    </div>
+
+                    <!-- Astuce 2 -->
+                    <div class="col-md-6">
+                        <div class="astuce-card">
+                            <div class="astuce-header">
+                                <h3><i class="fas fa-sun me-2"></i>Protégez votre peau du soleil</h3>
+                            </div>
+                            <p>Utilisez un écran solaire SPF 30+ au quotidien, même par temps nuageux. Cela prévient les dommages cutanés et le vieillissement prématuré.</p>
+                        </div>
+                    </div>
+
+                    <!-- Astuce 3 -->
+                    <div class="col-md-6">
+                        <div class="astuce-card">
+                            <div class="astuce-header">
+                                <h3><i class="fas fa-tooth me-2"></i>Santé dentaire quotidienne</h3>
+                            </div>
+                            <p>Brossez vos dents 2 fois par jour, flossez quotidiennement et visitez le dentiste 2 fois par an. Une bonne hygiène dentaire prévient de nombreux problèmes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Astuce 4 -->
+                    <div class="col-md-6">
+                        <div class="astuce-card">
+                            <div class="astuce-header">
+                                <h3><i class="fas fa-eye me-2"></i>Reposez vos yeux</h3>
+                            </div>
+                            <p>Suivez la règle 20-20-20: toutes les 20 minutes, regardez quelque chose à 20 pieds de distance pendant 20 secondes. Cela réduit la fatigue oculaire.</p>
+                        </div>
+                    </div>
+
+                    <!-- Astuce 5 -->
+                    <div class="col-md-6">
+                        <div class="astuce-card">
+                            <div class="astuce-header">
+                                <h3><i class="fas fa-heartbeat me-2"></i>Vérifiez votre tension artérielle</h3>
+                            </div>
+                            <p>Faites vérifier votre tension régulièrement. Une tension normale est inférieure à 120/80 mmHg. Une tension élevée n'a souvent pas de symptômes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Astuce 6 -->
+                    <div class="col-md-6">
+                        <div class="astuce-card">
+                            <div class="astuce-header">
+                                <h3><i class="fas fa-walking me-2"></i>Marchez plus</h3>
+                            </div>
+                            <p>Intégrez la marche dans votre routine quotidienne. Prenez les escaliers, stationnez plus loin, ou faites une promenade après les repas.</p>
+                        </div>
+                    </div>
+
+                    <!-- Astuce 7 -->
+                    <div class="col-md-6">
+                        <div class="astuce-card">
+                            <div class="astuce-header">
+                                <h3><i class="fas fa-wind me-2"></i>Améliorez la qualité de l'air</h3>
+                            </div>
+                            <p>Aérez votre maison quotidiennement. Les plantes d'intérieur purifient l'air naturellement. Un air pur favorise une meilleure respiration et concentration.</p>
+                        </div>
+                    </div>
+
+                    <!-- Astuce 8 -->
+                    <div class="col-md-6">
+                        <div class="astuce-card">
+                            <div class="astuce-header">
+                                <h3><i class="fas fa-moon me-2"></i>Maintenez une routine régulière</h3>
+                            </div>
+                            <p>Suivez un horaire régulier pour les repas, le sommeil et l'exercice. Cette cohérence aide votre corps à fonctionner de manière optimale.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: Guide des Symptômes -->
+            <div id="symptomes" class="tab-content">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title text-center mb-3">Guide des Symptômes</h2>
+                        <p class="section-subtitle text-center">
+                            Informations pour vous aider à comprendre vos symptômes. Consultez un professionnel de santé pour un diagnostic
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Barre de recherche symptômes -->
+                <div class="symptom-search mb-5">
+                    <input type="text" id="symptomSearch" class="form-control" placeholder="Recherchez un symptôme...">
+                </div>
+
+                <div class="row g-4">
+                    <!-- Symptôme 1: Fièvre -->
+                    <div class="col-md-6 col-lg-4 symptom-item">
+                        <div class="symptom-card">
+                            <div class="symptom-header">
+                                <h3><i class="fas fa-thermometer-half me-2"></i>Fièvre</h3>
+                            </div>
+                            <div class="symptom-content">
+                                <p class="symptom-description">Température corporelle > 38°C</p>
+                                <div class="symptom-causes">
+                                    <strong>Causes possibles:</strong>
+                                    <ul>
+                                        <li>Grippe ou rhume</li>
+                                        <li>Infections bactériennes</li>
+                                        <li>Inflammation</li>
+                                        <li>Infection urinaire</li>
+                                    </ul>
+                                </div>
+                                <div class="symptom-action alert alert-warning">
+                                    <strong>À faire:</strong> Reposez-vous, hydratez-vous, prenez du paracétamol si nécessaire. Consultez un médecin si persistante.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Symptôme 2: Toux -->
+                    <div class="col-md-6 col-lg-4 symptom-item">
+                        <div class="symptom-card">
+                            <div class="symptom-header">
+                                <h3><i class="fas fa-lungs me-2"></i>Toux</h3>
+                            </div>
+                            <div class="symptom-content">
+                                <p class="symptom-description">Réflexe de défense des voies respiratoires</p>
+                                <div class="symptom-causes">
+                                    <strong>Causes possibles:</strong>
+                                    <ul>
+                                        <li>Rhume ou grippe</li>
+                                        <li>Bronchite</li>
+                                        <li>Asthme</li>
+                                        <li>Allergie</li>
+                                    </ul>
+                                </div>
+                                <div class="symptom-action alert alert-warning">
+                                    <strong>À faire:</strong> Buvez chaud, utilisez un sirop contre la toux, humidifiez l'air. Consultez si plus de 3 semaines.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Symptôme 3: Mal de tête -->
+                    <div class="col-md-6 col-lg-4 symptom-item">
+                        <div class="symptom-card">
+                            <div class="symptom-header">
+                                <h3><i class="fas fa-head-side-virus me-2"></i>Mal de Tête</h3>
+                            </div>
+                            <div class="symptom-content">
+                                <p class="symptom-description">Douleur dans la région de la tête</p>
+                                <div class="symptom-causes">
+                                    <strong>Causes possibles:</strong>
+                                    <ul>
+                                        <li>Stress ou tension</li>
+                                        <li>Migraines</li>
+                                        <li>Manque d'hydratation</li>
+                                        <li>Infection</li>
+                                    </ul>
+                                </div>
+                                <div class="symptom-action alert alert-warning">
+                                    <strong>À faire:</strong> Reposez-vous dans un endroit calme, hydratez-vous, appliquez du froid/chaud. Prenez un antalgique si nécessaire.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Symptôme 4: Mal de gorge -->
+                    <div class="col-md-6 col-lg-4 symptom-item">
+                        <div class="symptom-card">
+                            <div class="symptom-header">
+                                <h3><i class="fas fa-microbe me-2"></i>Mal de Gorge</h3>
+                            </div>
+                            <div class="symptom-content">
+                                <p class="symptom-description">Douleur ou irritation de la gorge</p>
+                                <div class="symptom-causes">
+                                    <strong>Causes possibles:</strong>
+                                    <ul>
+                                        <li>Pharyngite virale</li>
+                                        <li>Angine streptococcique</li>
+                                        <li>Laryngite</li>
+                                        <li>Irritation</li>
+                                    </ul>
+                                </div>
+                                <div class="symptom-action alert alert-warning">
+                                    <strong>À faire:</strong> Gargarisez avec de l'eau salée, buvez chaud, prenez des pastilles. Consultez si persistant ou fièvre.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Symptôme 5: Nausée -->
+                    <div class="col-md-6 col-lg-4 symptom-item">
+                        <div class="symptom-card">
+                            <div class="symptom-header">
+                                <h3><i class="fas fa-face-flushed me-2"></i>Nausée/Vomissements</h3>
+                            </div>
+                            <div class="symptom-content">
+                                <p class="symptom-description">Sensation d'envie de vomir</p>
+                                <div class="symptom-causes">
+                                    <strong>Causes possibles:</strong>
+                                    <ul>
+                                        <li>Gastro-entérite</li>
+                                        <li>Mal de transport</li>
+                                        <li>Alimentation inadéquate</li>
+                                        <li>Stress</li>
+                                    </ul>
+                                </div>
+                                <div class="symptom-action alert alert-warning">
+                                    <strong>À faire:</strong> Reposez-vous, mangez léger, hydratez-vous avec des petites doses. Consultez si prolongé ou déshydratation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Symptôme 6: Douleur abdominale -->
+                    <div class="col-md-6 col-lg-4 symptom-item">
+                        <div class="symptom-card">
+                            <div class="symptom-header">
+                                <h3><i class="fas fa-person-dots-from-body me-2"></i>Douleur Abdominale</h3>
+                            </div>
+                            <div class="symptom-content">
+                                <p class="symptom-description">Douleur au niveau du ventre</p>
+                                <div class="symptom-causes">
+                                    <strong>Causes possibles:</strong>
+                                    <ul>
+                                        <li>Gastro-entérite</li>
+                                        <li>Indigestion</li>
+                                        <li>Constipation</li>
+                                        <li>Appendicite (urgence)</li>
+                                    </ul>
+                                </div>
+                                <div class="symptom-action alert alert-warning">
+                                    <strong>À faire:</strong> Repos, chaleur sur le ventre, alimentation légère. Consultez rapidement si douleur intense.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Symptôme 7: Fatigue -->
+                    <div class="col-md-6 col-lg-4 symptom-item">
+                        <div class="symptom-card">
+                            <div class="symptom-header">
+                                <h3><i class="fas fa-battery-empty me-2"></i>Fatigue</h3>
+                            </div>
+                            <div class="symptom-content">
+                                <p class="symptom-description">Épuisement ou manque d'énergie</p>
+                                <div class="symptom-causes">
+                                    <strong>Causes possibles:</strong>
+                                    <ul>
+                                        <li>Manque de sommeil</li>
+                                        <li>Anémie</li>
+                                        <li>Dépression</li>
+                                        <li>Hypothyroïdie</li>
+                                    </ul>
+                                </div>
+                                <div class="symptom-action alert alert-warning">
+                                    <strong>À faire:</strong> Dormez plus, faites de l'exercice, consultez votre médecin pour tests si persistante.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Symptôme 8: Douleur musculaire -->
+                    <div class="col-md-6 col-lg-4 symptom-item">
+                        <div class="symptom-card">
+                            <div class="symptom-header">
+                                <h3><i class="fas fa-heartbeat me-2"></i>Douleur Musculaire</h3>
+                            </div>
+                            <div class="symptom-content">
+                                <p class="symptom-description">Douleur au niveau des muscles</p>
+                                <div class="symptom-causes">
+                                    <strong>Causes possibles:</strong>
+                                    <ul>
+                                        <li>Effort physique</li>
+                                        <li>Grippe ou virus</li>
+                                        <li>Fibromyalgie</li>
+                                        <li>Arthrite</li>
+                                    </ul>
+                                </div>
+                                <div class="symptom-action alert alert-warning">
+                                    <strong>À faire:</strong> Repos, étirements légers, chaleur, antalgiques. Consulter si chronique ou intense.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Symptôme 9: Allergie -->
+                    <div class="col-md-6 col-lg-4 symptom-item">
+                        <div class="symptom-card">
+                            <div class="symptom-header">
+                                <h3><i class="fas fa-pollen me-2"></i>Symptômes Allergiques</h3>
+                            </div>
+                            <div class="symptom-content">
+                                <p class="symptom-description">Éternuements, démangeaisons, écoulement nasal</p>
+                                <div class="symptom-causes">
+                                    <strong>Causes possibles:</strong>
+                                    <ul>
+                                        <li>Allergie saisonnière</li>
+                                        <li>Allergie alimentaire</li>
+                                        <li>Allergie animaux</li>
+                                        <li>Rhinite allergique</li>
+                                    </ul>
+                                </div>
+                                <div class="symptom-action alert alert-warning">
+                                    <strong>À faire:</strong> Évitez l'allergène, prenez un antihistaminique, consultez si grave. Test d'allergie recommandé.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alert important -->
+                <div class="alert alert-danger mt-5" role="alert">
+                    <h4 class="alert-heading"><i class="fas fa-exclamation-triangle me-2"></i>Important</h4>
+                    <p class="mb-0">Ce guide est informatif seulement et ne remplace pas l'avis d'un professionnel de santé. En cas de symptômes graves, consultez immédiatement un médecin ou appelez les urgences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA -->
+    <section class="cta-final-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Besoin d'une pharmacie près de vous ?</h2>
+                <p>Trouvez rapidement la pharmacie la plus proche pour vos médicaments</p>
+                <a href="pharmacie.html" class="cta-button">
+                    <i class="fas fa-map-marker-alt me-2"></i>
+                    Voir les pharmacies
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer modernisé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-title">PHARMCI</h5>
+                    <p class="footer-text">Votre plateforme de confiance pour trouver des pharmacies en Côte d'Ivoire.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-title">Liens Rapides</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="A-propos.html">À Propos</a></li>
+                        <li><a href="pharmacie.html">Pharmacies</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="footer-title">Suivez-nous</h5>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="row">
+                <div class="col-md-6 text-md-start text-center mb-3 mb-md-0">
+                    <p class="footer-copyright">© 2025 PHARMCI. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-md-end text-center">
+                    <p class="footer-legal">
+                        <a href="#">Politique de confidentialité</a> • 
+                        <a href="#">Conditions d'utilisation</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/espace.js"></script>
+</body>
+</html>
