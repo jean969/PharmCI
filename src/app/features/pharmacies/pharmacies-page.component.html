@@ -1,0 +1,150 @@
+<section class="page-hero" appScrollReveal>
+  <div class="page-hero-inner">
+    <p class="eyebrow">Le bon repère, près de vous</p>
+    <h1>Trouvez une pharmacie</h1>
+    <p>
+      Recherchez parmi les {{ pharmacyService.pharmacies.length }} fiches
+      locales et consultez les informations disponibles.
+    </p>
+  </div>
+</section>
+
+<section class="directory-section">
+  <div class="directory-wrap">
+    <form
+      class="filters-panel"
+      aria-label="Filtres des pharmacies"
+      appScrollReveal
+      (submit)="$event.preventDefault()"
+    >
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Nom, ville ou adresse</mat-label>
+        <input
+          #searchInput
+          matInput
+          type="search"
+          autocomplete="off"
+          [value]="query()"
+          (input)="query.set(searchInput.value)"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Ville</mat-label>
+        <mat-select [value]="city()" (selectionChange)="city.set($event.value)">
+          <mat-option value="">Toutes les villes</mat-option>
+          @for (cityName of cities; track cityName) {
+            <mat-option [value]="cityName">{{ cityName }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Disponibilité</mat-label>
+        <mat-select
+          [value]="status()"
+          (selectionChange)="status.set($event.value)"
+        >
+          @for (option of statusOptions; track option.value) {
+            <mat-option [value]="option.value">{{ option.label }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Service</mat-label>
+        <mat-select
+          [value]="service()"
+          (selectionChange)="service.set($event.value)"
+        >
+          <mat-option value="">Tous les services</mat-option>
+          @for (option of serviceOptions; track option.value) {
+            <mat-option [value]="option.value">{{ option.label }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <button
+        mat-stroked-button
+        type="button"
+        class="location-button"
+        [disabled]="isLocating()"
+        (click)="locateNearby()"
+      >
+        <span aria-hidden="true">⌖</span>
+        {{ isLocating() ? "Localisation…" : "Près de moi" }}
+      </button>
+      <button
+        mat-button
+        type="button"
+        class="clear-button"
+        (click)="clearFilters()"
+      >
+        Effacer
+      </button>
+    </form>
+
+    @if (locationError()) {
+      <p
+        class="location-error"
+        role="alert"
+        animate.enter="action-feedback-enter"
+        animate.leave="action-feedback-leave"
+      >
+        {{ locationError() }}
+      </p>
+    }
+
+    <div class="results-heading" appScrollReveal>
+      <div>
+        <h2>Pharmacies référencées</h2>
+        <p aria-live="polite">
+          {{ results().length }} résultat{{ results().length === 1 ? "" : "s" }}
+        </p>
+      </div>
+      <p class="data-note">
+        Les horaires sont indicatifs : appelez l’établissement pour les
+        confirmer.
+      </p>
+    </div>
+
+    @if (results().length > 0) {
+      <div class="pharmacy-grid">
+        @for (result of results(); track result.pharmacy.id) {
+          <app-pharmacy-card
+            [pharmacy]="result.pharmacy"
+            [status]="result.status"
+            [todayHours]="result.todayHours"
+            [distanceKm]="result.distanceKm"
+            appScrollReveal
+            animate.enter="result-enter"
+            animate.leave="result-leave"
+            (detailsRequested)="openDetails($event)"
+          />
+        }
+      </div>
+    } @else {
+      <section
+        class="empty-state"
+        aria-live="polite"
+        animate.enter="action-feedback-enter"
+        animate.leave="action-feedback-leave"
+      >
+        <span class="empty-icon" aria-hidden="true">⌕</span>
+        <h2>Aucune pharmacie trouvée</h2>
+        @if (status() === "garde") {
+          <p>
+            Les fiches locales ne comportent actuellement aucune pharmacie
+            marquée de garde. Les données doivent être vérifiées et mises à
+            jour.
+          </p>
+        } @else {
+          <p>Essayez un autre nom, une autre ville ou un autre filtre.</p>
+        }
+        <button mat-stroked-button type="button" (click)="clearFilters()">
+          Réinitialiser les filtres
+        </button>
+      </section>
+    }
+  </div>
+</section>

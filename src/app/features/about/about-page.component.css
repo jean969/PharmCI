@@ -1,0 +1,358 @@
+:host {
+  display: block;
+}
+
+.page-hero {
+  padding: 4.5rem 1.25rem 5rem;
+  background:
+    radial-gradient(
+      ellipse at 82% 50%,
+      rgb(167 224 192 / 28%) 0,
+      transparent 32%
+    ),
+    #f2f8f4;
+  text-align: center;
+}
+
+.page-hero-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  color: #16835d;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.page-hero h1 {
+  margin: 0 auto 0.8rem;
+  color: #173a30;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
+.page-hero p:last-child {
+  margin: 0;
+  color: #60736a;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.mission-section,
+.values-section,
+.features-section,
+.commitments-section,
+.contact-section {
+  width: min(100% - 2.5rem, 1120px);
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.mission-section {
+  display: grid;
+  grid-template-columns: 1.1fr 0.8fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+.mission-copy h2,
+.section-heading h2,
+.contact-intro h2 {
+  margin: 0 0 1rem;
+  color: #173a30;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.mission-copy > p:not(.eyebrow),
+.section-heading > p:last-child,
+.contact-intro > p:last-child {
+  color: #60736a;
+  line-height: 1.75;
+}
+
+.mission-copy > p:not(.eyebrow) {
+  margin-bottom: 0.8rem;
+}
+
+.mission-copy a {
+  min-height: 46px;
+  margin-top: 0.7rem;
+  border-radius: 999px;
+}
+
+.mission-card {
+  overflow: hidden;
+  border: 0;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 85% 12%, rgb(122 208 158 / 22%), transparent 32%),
+    #12392e;
+  color: #fff;
+  box-shadow: 0 24px 55px rgb(16 40 76 / 18%);
+}
+
+.mission-card mat-card-content {
+  display: grid;
+  min-height: 310px;
+  align-content: center;
+  padding: 2rem;
+}
+
+.mission-symbol {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 18px;
+  background: #d8f0e2;
+  color: #126b4f;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.mission-card h2 {
+  margin: 1.3rem 0 0.5rem;
+  font-size: 1.7rem;
+}
+
+.mission-card p {
+  margin-bottom: 1.5rem;
+  color: #c3d7cb;
+  line-height: 1.65;
+}
+
+.mission-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(255 255 255 / 20%);
+}
+
+.mission-stat strong {
+  color: #a9c8ff;
+  font-size: 1.8rem;
+}
+
+.mission-stat span {
+  color: #d5e5dc;
+  font-size: 0.9rem;
+}
+
+.values-section {
+  padding-top: 1rem;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.value-card {
+  border: 1px solid #e6eee8;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.value-card mat-card-content {
+  padding: 1.3rem;
+}
+
+.value-symbol {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 14px;
+  background: #e6f4eb;
+  color: #16835d;
+  font-size: 1.5rem;
+}
+
+.value-card h3,
+.commitment-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #173a30;
+  font-size: 1.05rem;
+}
+
+.value-card p,
+.commitment-card p {
+  margin: 0;
+  color: #6a7a72;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.features-section {
+  padding-top: 1rem;
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem 2rem;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.feature-list li {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #edf1ed;
+  color: #445b50;
+  line-height: 1.5;
+}
+
+.feature-list li span {
+  color: #16835d;
+  font-weight: 800;
+}
+
+.commitments-section {
+  width: 100%;
+  max-width: none;
+  padding: 4.5rem max(1.25rem, calc((100% - 1120px) / 2));
+  background: #f2f8f4;
+}
+
+.commitments-grid {
+  display: grid;
+  max-width: 1120px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.commitment-card {
+  display: flex;
+  gap: 0.9rem;
+  padding: 1.3rem;
+  border: 1px solid #e6eee8;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.commitment-card > span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 10px;
+  background: #e6f4eb;
+  color: #16835d;
+  font-weight: 800;
+}
+
+.commitment-card h3 {
+  margin-top: 0.1rem;
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-intro {
+  position: sticky;
+  top: 110px;
+}
+
+.contact-card {
+  border: 1px solid #e6eee8;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgb(24 73 49 / 5%);
+}
+
+.contact-card mat-card-content {
+  padding: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.contact-card button {
+  min-height: 46px;
+  border-radius: 10px;
+}
+
+.form-status {
+  padding: 0.8rem;
+  border-radius: 10px;
+  background: #fff4e2;
+  color: #75510f;
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+  .mission-section {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-intro {
+    position: static;
+  }
+}
+
+@media (max-width: 540px) {
+  .mission-section,
+  .values-section,
+  .features-section,
+  .contact-section {
+    padding: 3.5rem 0;
+  }
+
+  .values-grid,
+  .feature-list,
+  .commitments-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .commitments-section {
+    padding: 3.5rem 1rem;
+  }
+
+  .contact-card mat-card-content {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,168 @@
+<section class="page-hero" appScrollReveal>
+  <div class="page-hero-inner">
+    <p class="eyebrow">Conseils & informations</p>
+    <h1>Espace santé</h1>
+    <p>
+      Des repères de bien-être et des informations générales pour votre
+      quotidien.
+    </p>
+  </div>
+</section>
+
+<section class="health-content" appScrollReveal>
+  <mat-tab-group
+    class="health-tabs"
+    animationDuration="180ms"
+    aria-label="Rubriques de l’espace santé"
+  >
+    <mat-tab label="Conseils bien-être">
+      <ng-template matTabContent>
+        <section
+          class="tab-panel"
+          aria-labelledby="wellness-title"
+          appScrollReveal
+        >
+          <div class="section-heading">
+            <p class="eyebrow">Prendre soin de soi</p>
+            <h2 id="wellness-title">Conseils pour votre bien-être</h2>
+            <p>
+              Découvrez des recommandations générales pour une meilleure qualité
+              de vie.
+            </p>
+          </div>
+          <div class="health-grid">
+            @for (tip of wellnessTips; track tip.title) {
+              <mat-card class="health-card" appScrollReveal>
+                <mat-card-content>
+                  <span class="tip-symbol" aria-hidden="true">{{
+                    tip.symbol
+                  }}</span>
+                  <h3>{{ tip.title }}</h3>
+                  <p>{{ tip.description }}</p>
+                  <ul>
+                    @for (point of tip.points; track point) {
+                      <li>{{ point }}</li>
+                    }
+                  </ul>
+                </mat-card-content>
+              </mat-card>
+            }
+          </div>
+        </section>
+      </ng-template>
+    </mat-tab>
+
+    <mat-tab label="Astuces santé">
+      <ng-template matTabContent>
+        <section
+          class="tab-panel"
+          aria-labelledby="daily-tips-title"
+          appScrollReveal
+        >
+          <div class="section-heading">
+            <p class="eyebrow">Petits gestes du quotidien</p>
+            <h2 id="daily-tips-title">Astuces de santé</h2>
+            <p>Des gestes simples qui peuvent contribuer au bien-être.</p>
+          </div>
+          <div class="tips-grid">
+            @for (tip of dailyTips; track tip.title) {
+              <mat-card class="daily-tip-card" appScrollReveal>
+                <mat-card-content>
+                  <span class="tip-symbol" aria-hidden="true">{{
+                    tip.symbol
+                  }}</span>
+                  <div>
+                    <h3>{{ tip.title }}</h3>
+                    <p>{{ tip.description }}</p>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+            }
+          </div>
+        </section>
+      </ng-template>
+    </mat-tab>
+
+    <mat-tab label="Guide des symptômes">
+      <ng-template matTabContent>
+        <section
+          class="tab-panel"
+          aria-labelledby="symptoms-title"
+          appScrollReveal
+        >
+          <div class="section-heading">
+            <p class="eyebrow">Informations générales</p>
+            <h2 id="symptoms-title">Guide des symptômes</h2>
+            <p>
+              Ces repères ne permettent pas de poser un diagnostic. Demandez
+              conseil à un professionnel de santé.
+            </p>
+          </div>
+
+          <mat-form-field appearance="outline" class="symptom-search">
+            <mat-label>Rechercher un symptôme</mat-label>
+            <input
+              #symptomInput
+              matInput
+              type="search"
+              [value]="symptomQuery()"
+              (input)="symptomQuery.set(symptomInput.value)"
+            />
+          </mat-form-field>
+
+          @if (filteredSymptoms().length > 0) {
+            <div class="symptoms-grid">
+              @for (symptom of filteredSymptoms(); track symptom.title) {
+                <mat-card class="symptom-card">
+                  <mat-card-content>
+                    <h3>{{ symptom.title }}</h3>
+                    <p class="symptom-description">{{ symptom.description }}</p>
+                    <h4>Causes possibles</h4>
+                    <ul>
+                      @for (cause of symptom.causes; track cause) {
+                        <li>{{ cause }}</li>
+                      }
+                    </ul>
+                    <p class="symptom-advice">
+                      <strong>À retenir :</strong> {{ symptom.advice }}
+                    </p>
+                  </mat-card-content>
+                </mat-card>
+              }
+            </div>
+          } @else {
+            <div
+              class="empty-state"
+              aria-live="polite"
+              animate.enter="action-feedback-enter"
+              animate.leave="action-feedback-leave"
+            >
+              <h3>Aucun symptôme correspondant</h3>
+              <p>Essayez un autre mot-clé.</p>
+            </div>
+          }
+
+          <aside class="medical-notice" role="note">
+            <strong>Important</strong>
+            <p>
+              Ce guide est informatif et ne remplace pas l’avis d’un
+              professionnel de santé. En cas de symptômes graves, consultez
+              immédiatement un médecin ou appelez les urgences.
+            </p>
+          </aside>
+        </section>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</section>
+
+<section class="health-cta" appScrollReveal>
+  <div>
+    <p class="eyebrow">Pour vous orienter</p>
+    <h2>Besoin des coordonnées d’une pharmacie ?</h2>
+    <p>Consultez l’annuaire et contactez directement l’établissement.</p>
+  </div>
+  <a mat-flat-button routerLink="/pharmacies"
+    >Voir les pharmacies <span aria-hidden="true">→</span></a
+  >
+</section>

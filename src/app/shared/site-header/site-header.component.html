@@ -1,0 +1,94 @@
+<header class="site-header">
+  <mat-toolbar class="toolbar">
+    <a
+      class="brand"
+      routerLink="/"
+      aria-label="PHARMCI, accueil"
+      (click)="closeMenu()"
+    >
+      <img
+        class="brand-mark"
+        src="/pharmci-logo.svg"
+        alt=""
+        aria-hidden="true"
+      />
+      <span>PHARM<span>CI</span></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      <a
+        mat-button
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Accueil</a
+      >
+      <a mat-button routerLink="/pharmacies" routerLinkActive="active-link"
+        >Pharmacies</a
+      >
+      <a mat-button routerLink="/espace-sante" routerLinkActive="active-link"
+        >Espace santé</a
+      >
+      <a mat-button routerLink="/a-propos" routerLinkActive="active-link"
+        >À propos</a
+      >
+    </nav>
+
+    <a
+      class="header-cta"
+      mat-flat-button
+      color="primary"
+      routerLink="/pharmacies"
+    >
+      Trouver une pharmacie
+    </a>
+
+    <button
+      class="menu-toggle"
+      mat-icon-button
+      type="button"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-navigation"
+      [attr.aria-label]="menuOpen() ? 'Fermer le menu' : 'Ouvrir le menu'"
+      (click)="toggleMenu()"
+    >
+      <span aria-hidden="true">{{ menuOpen() ? "×" : "☰" }}</span>
+    </button>
+  </mat-toolbar>
+
+  @if (menuOpen()) {
+    <nav
+      id="mobile-navigation"
+      class="mobile-nav"
+      aria-label="Navigation mobile"
+      animate.enter="mobile-nav-enter"
+      animate.leave="mobile-nav-leave"
+    >
+      <a
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+        >Accueil</a
+      >
+      <a
+        routerLink="/pharmacies"
+        routerLinkActive="active-link"
+        (click)="closeMenu()"
+        >Pharmacies</a
+      >
+      <a
+        routerLink="/espace-sante"
+        routerLinkActive="active-link"
+        (click)="closeMenu()"
+        >Espace santé</a
+      >
+      <a
+        routerLink="/a-propos"
+        routerLinkActive="active-link"
+        (click)="closeMenu()"
+        >À propos</a
+      >
+    </nav>
+  }
+</header>

@@ -1,0 +1,141 @@
+<section class="hero" appScrollReveal>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">
+        <span class="eyebrow-dot"></span> Votre repère santé en Côte d’Ivoire
+      </p>
+      <h1>Trouvez une pharmacie<br /><span>en toute simplicité.</span></h1>
+      <p class="hero-description">
+        Consultez les pharmacies référencées, leurs coordonnées et les horaires
+        disponibles près de vous.
+      </p>
+      <div class="hero-actions">
+        <a mat-flat-button color="primary" routerLink="/pharmacies"
+          >Explorer les pharmacies <span aria-hidden="true">→</span></a
+        >
+        <a mat-button routerLink="/a-propos">Découvrir PHARMCI</a>
+      </div>
+      <div class="hero-proof">
+        <span class="proof-mark" aria-hidden="true">✓</span>
+        <span>Recherche locale, sans vente de médicaments en ligne</span>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="art-orbit orbit-outer"></div>
+      <div class="art-orbit orbit-inner"></div>
+      <div class="art-cross">+</div>
+      <div class="art-card">
+        <span class="art-card-icon">⌖</span>
+        <div>
+          <strong>À proximité</strong>
+          <span>Coordonnées & itinéraire</span>
+        </div>
+        <span class="art-arrow">↗</span>
+      </div>
+      <span class="art-spark spark-one">✦</span>
+      <span class="art-spark spark-two">✦</span>
+    </div>
+  </div>
+</section>
+
+<section
+  class="trust-strip"
+  aria-label="Informations sur le service"
+  appScrollReveal
+>
+  <div class="trust-item">
+    <strong>Local</strong>
+    <span>des fiches consultables en Côte d’Ivoire</span>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <strong>100%</strong>
+    <span>gratuit pour rechercher une pharmacie</span>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <strong>CI</strong>
+    <span>pensé pour la Côte d’Ivoire</span>
+  </div>
+</section>
+
+<section class="section features-section" appScrollReveal>
+  <div class="section-heading">
+    <p class="eyebrow">Une recherche plus sereine</p>
+    <h2>Les informations essentielles, au même endroit</h2>
+    <p>PHARMCI vous aide à trouver et contacter une pharmacie, sans détour.</p>
+  </div>
+  <div class="feature-grid">
+    @for (feature of features; track feature.title) {
+      <mat-card class="feature-card" appScrollReveal>
+        <div class="feature-icon" aria-hidden="true">{{ feature.icon }}</div>
+        <mat-card-header>
+          <mat-card-title>{{ feature.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ feature.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
+
+<section class="how-section" appScrollReveal>
+  <div class="how-layout">
+    <div class="section-heading">
+      <p class="eyebrow">Comment ça marche</p>
+      <h2>En trois étapes, trouvez votre repère</h2>
+      <p>
+        Les résultats sont issus des fiches locales de l’application. Contactez
+        l’établissement pour confirmer ses horaires.
+      </p>
+      <a mat-stroked-button color="primary" routerLink="/pharmacies"
+        >Commencer la recherche <span aria-hidden="true">→</span></a
+      >
+    </div>
+    <ol class="steps-list">
+      @for (step of steps; track $index) {
+        <li>
+          <span class="step-number">0{{ $index + 1 }}</span>
+          <span>{{ step }}</span>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section tips-section" appScrollReveal>
+  <div class="section-heading">
+    <p class="eyebrow">Avant de vous déplacer</p>
+    <h2>Quelques réflexes pour une recherche sereine</h2>
+    <p>
+      Les fiches vous aident à préparer votre recherche. Pensez à confirmer les
+      informations directement auprès de la pharmacie.
+    </p>
+  </div>
+  <div class="tips-grid">
+    @for (tip of tips; track tip.title) {
+      <mat-card class="tip-card" appScrollReveal>
+        <mat-card-content>
+          <span class="tip-icon" aria-hidden="true">{{ tip.icon }}</span>
+          <h3>{{ tip.title }}</h3>
+          <p>{{ tip.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
+
+<section class="cta-section" appScrollReveal>
+  <div>
+    <p class="eyebrow">PHARMCI vous accompagne</p>
+    <h2>Besoin d’une pharmacie ?</h2>
+    <p>
+      Consultez les fiches et trouvez les coordonnées dont vous avez besoin.
+    </p>
+  </div>
+  <a mat-flat-button routerLink="/pharmacies"
+    >Voir les pharmacies <span aria-hidden="true">→</span></a
+  >
+</section>

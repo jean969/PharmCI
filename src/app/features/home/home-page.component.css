@@ -1,0 +1,526 @@
+:host {
+  display: block;
+}
+
+.hero {
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 82% 45%,
+      rgb(167 224 192 / 34%) 0,
+      transparent 34%
+    ),
+    linear-gradient(110deg, #f2f7ff 0%, #fbfcff 54%, #edf4ff 100%);
+}
+
+.hero-inner {
+  display: grid;
+  width: min(100% - 2.5rem, 1200px);
+  min-height: 570px;
+  margin: 0 auto;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 4.5rem 0;
+}
+
+.hero-copy {
+  max-width: 660px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  color: #16835d;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34a873;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 1.25rem;
+  color: #173a30;
+  font-size: clamp(2.5rem, 4.3vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+}
+
+h1 span {
+  color: #16835d;
+}
+
+.hero-description {
+  max-width: 550px;
+  margin-bottom: 1.7rem;
+  color: #60736a;
+  font-size: 1.12rem;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero-actions a,
+.cta-section a {
+  min-height: 48px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+  color: #6a7a72;
+  font-size: 0.9rem;
+}
+
+.proof-mark {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border-radius: 50%;
+  background: #d8f0e2;
+  color: #16835d;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.hero-art {
+  position: relative;
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+}
+
+.art-orbit {
+  position: absolute;
+  border: 1px solid rgb(31 137 92 / 11%);
+  border-radius: 50%;
+}
+
+.orbit-outer {
+  width: min(100%, 390px);
+  aspect-ratio: 1;
+}
+
+.orbit-inner {
+  width: min(74%, 290px);
+  aspect-ratio: 1;
+}
+
+.art-cross {
+  display: grid;
+  width: 180px;
+  height: 180px;
+  place-items: center;
+  border: 18px solid #d5efdf;
+  border-radius: 48px;
+  background: linear-gradient(145deg, #218d60, #11684b);
+  box-shadow: 0 28px 65px rgb(21 111 75 / 23%);
+  color: white;
+  font-size: 7rem;
+  font-weight: 300;
+  line-height: 1;
+  transform: rotate(-8deg);
+}
+
+.art-card {
+  position: absolute;
+  right: 0;
+  bottom: 3.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 270px;
+  padding: 1rem;
+  border: 1px solid #e6eee8;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 16px 35px rgb(23 58 48 / 12%);
+}
+
+.art-card-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  background: #e6f4eb;
+  color: #16835d;
+  font-size: 1.5rem;
+}
+
+.art-card div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.art-card strong {
+  color: #173a30;
+}
+
+.art-card div span {
+  color: #6a7a72;
+  font-size: 0.78rem;
+}
+
+.art-arrow {
+  margin-left: auto;
+  color: #16835d;
+  font-size: 1.3rem;
+}
+
+.art-spark {
+  position: absolute;
+  color: #f1b85b;
+  font-size: 1.5rem;
+}
+
+.spark-one {
+  top: 4rem;
+  right: 3rem;
+}
+
+.spark-two {
+  bottom: 4rem;
+  left: 3rem;
+  font-size: 1rem;
+}
+
+.trust-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1.4rem, 5vw, 5rem);
+  padding: 1.4rem 1.25rem;
+  border-bottom: 1px solid #edf1ed;
+  background: #fff;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.trust-item strong {
+  color: #126b4f;
+  font-size: 1.3rem;
+}
+
+.trust-item span {
+  max-width: 190px;
+  color: #6a7a72;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.trust-divider {
+  width: 1px;
+  height: 34px;
+  background: #e6eee8;
+}
+
+.section {
+  width: min(100% - 2.5rem, 1200px);
+  margin: 0 auto;
+  padding: 5.5rem 0;
+}
+
+.section-heading {
+  max-width: 680px;
+  margin: 0 auto 2.6rem;
+  text-align: center;
+}
+
+.section-heading .eyebrow {
+  justify-content: center;
+}
+
+.section-heading h2,
+.cta-section h2 {
+  margin-bottom: 0.8rem;
+  color: #173a30;
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.section-heading > p:last-child {
+  color: #6a7a72;
+  line-height: 1.7;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.feature-card {
+  min-height: 230px;
+  padding: 1.3rem;
+  border: 1px solid #e6eee8;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgb(24 73 49 / 4%);
+}
+
+.feature-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.9rem;
+  place-items: center;
+  border-radius: 15px;
+  background: #e6f4eb;
+  color: #16835d;
+  font-size: 1.8rem;
+}
+
+.feature-card mat-card-header {
+  padding: 0;
+}
+
+.feature-card mat-card-title {
+  color: #173a30;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.feature-card mat-card-content {
+  padding: 0.65rem 0 0;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #6a7a72;
+  line-height: 1.65;
+}
+
+.how-section {
+  padding: 5rem max(1.25rem, calc((100% - 1200px) / 2));
+  background: #f2f8f4;
+}
+
+.how-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+.how-layout .section-heading {
+  margin: 0;
+  text-align: left;
+}
+
+.how-layout .section-heading .eyebrow {
+  justify-content: flex-start;
+}
+
+.how-layout .section-heading > p:last-of-type {
+  margin-bottom: 1.4rem;
+}
+
+.steps-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.steps-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem;
+  border: 1px solid #e6eee8;
+  border-radius: 14px;
+  background: #fff;
+  color: #365348;
+  font-weight: 600;
+}
+
+.step-number {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 12px;
+  background: #e6f4eb;
+  color: #16835d;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.tips-section {
+  padding-bottom: 5rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.tip-card {
+  border: 1px solid #e6eee8;
+  border-radius: 18px;
+  box-shadow: none;
+}
+
+.tip-card mat-card-content {
+  padding: 1.3rem;
+}
+
+.tip-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 14px;
+  background: #e6f4eb;
+  color: #16835d;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.tip-card h3 {
+  margin: 1rem 0 0.55rem;
+  color: #173a30;
+  font-size: 1.05rem;
+}
+
+.tip-card p {
+  margin: 0;
+  color: #6a7a72;
+  line-height: 1.65;
+}
+
+.cta-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto 5rem;
+  padding: 3rem max(2rem, calc((100% - 1100px) / 2));
+  background:
+    radial-gradient(
+      ellipse at 85% 50%,
+      rgb(87 181 126 / 20%) 0,
+      transparent 35%
+    ),
+    #edf4ff;
+}
+
+.cta-section .eyebrow {
+  margin-bottom: 0.65rem;
+}
+
+.cta-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.cta-section p:last-child {
+  margin: 0;
+  color: #60736a;
+}
+
+@media (max-width: 850px) {
+  .hero-inner {
+    grid-template-columns: 1fr 0.8fr;
+  }
+
+  .trust-strip {
+    gap: 1.5rem;
+  }
+
+  .how-layout {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-inner {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 4rem 0 2.5rem;
+  }
+
+  .hero-art {
+    min-height: 290px;
+  }
+
+  .art-cross {
+    width: 145px;
+    height: 145px;
+    border-width: 14px;
+    border-radius: 38px;
+    font-size: 5.5rem;
+  }
+
+  .art-card {
+    right: 0;
+    bottom: 1rem;
+    min-width: 240px;
+  }
+
+  .trust-strip {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .trust-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .feature-grid,
+  .tips-grid,
+  .how-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    min-height: 0;
+  }
+
+  .how-layout {
+    gap: 2.5rem;
+  }
+
+  .cta-section {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    padding: 2.5rem 1.25rem;
+  }
+}

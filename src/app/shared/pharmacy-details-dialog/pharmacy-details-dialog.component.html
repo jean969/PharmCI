@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>{{ pharmacy.name }}</h2>
+<mat-dialog-content>
+  <p class="city">{{ pharmacy.city }}</p>
+  <p class="description">{{ pharmacy.description }}</p>
+
+  <dl class="details-list">
+    <div>
+      <dt>Adresse</dt>
+      <dd>{{ pharmacy.address }}</dd>
+    </div>
+    <div>
+      <dt>Téléphone</dt>
+      <dd>
+        <a [href]="'tel:' + pharmacy.phone">{{ pharmacy.phone }}</a>
+      </dd>
+    </div>
+    <div>
+      <dt>Services</dt>
+      <dd>{{ pharmacy.services.join(", ") }}</dd>
+    </div>
+    <div>
+      <dt>Spécialités</dt>
+      <dd>{{ pharmacy.specialties.join(", ") }}</dd>
+    </div>
+  </dl>
+
+  <h3>Horaires indiqués</h3>
+  <dl class="hours-list">
+    @for (day of hours; track day.key) {
+      <div>
+        <dt>{{ day.label }}</dt>
+        <dd>{{ pharmacy.hours[day.key] || "Non spécifié" }}</dd>
+      </div>
+    }
+  </dl>
+  <p class="disclaimer">
+    Les horaires proviennent des données locales et peuvent ne pas être à jour.
+    Appelez la pharmacie pour les confirmer.
+  </p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <a mat-button [href]="'tel:' + pharmacy.phone">Appeler</a>
+  <a
+    mat-flat-button
+    [href]="directionsUrl"
+    target="_blank"
+    rel="noopener noreferrer"
+    >Itinéraire</a
+  >
+  <button mat-button mat-dialog-close type="button">Fermer</button>
+</mat-dialog-actions>

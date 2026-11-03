@@ -1,0 +1,67 @@
+.city {
+  margin: 0.1rem 0 0.6rem;
+  color: #16835d;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.description,
+.disclaimer {
+  color: #60736a;
+  line-height: 1.6;
+}
+
+.details-list,
+.hours-list {
+  margin: 1rem 0;
+}
+
+.details-list > div,
+.hours-list > div {
+  display: grid;
+  grid-template-columns: minmax(100px, 0.35fr) 1fr;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #edf1ed;
+}
+
+dt {
+  color: #6a7a72;
+  font-weight: 600;
+}
+
+dd {
+  margin: 0;
+  color: #253f33;
+}
+
+dd a {
+  color: #126b4f;
+  font-weight: 700;
+}
+
+h3 {
+  margin: 1.5rem 0 0.5rem;
+  color: #173a30;
+  font-size: 1rem;
+}
+
+.disclaimer {
+  margin: 1rem 0 0.2rem;
+  font-size: 0.82rem;
+}
+
+mat-dialog-actions a,
+mat-dialog-actions button {
+  border-radius: 9px;
+}
+
+@media (max-width: 520px) {
+  .details-list > div,
+  .hours-list > div {
+    grid-template-columns: 90px 1fr;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,50 @@
+<mat-card class="pharmacy-card">
+  <mat-card-content>
+    <div class="card-heading">
+      <div>
+        <p class="city">{{ pharmacy().city }}</p>
+        <h2>{{ pharmacy().name }}</h2>
+      </div>
+      <span
+        class="status-badge"
+        [class.status-open]="status() === 'open'"
+        [class.status-closed]="status() === 'closed'"
+        [class.status-garde]="status() === 'garde'"
+      >
+        <span aria-hidden="true"></span>{{ statusLabels[status()] }}
+      </span>
+    </div>
+
+    <p class="address">
+      <span aria-hidden="true">⌖</span>
+      {{ pharmacy().address }}
+    </p>
+
+    <div class="hours-row">
+      <span class="hours-label">Aujourd’hui</span>
+      <strong>{{ todayHours() }}</strong>
+      @if (distanceKm() !== null) {
+        <span class="distance">{{ distanceKm() | number: "1.1-1" }} km</span>
+      }
+    </div>
+
+    <div class="card-actions">
+      <a
+        mat-stroked-button
+        [href]="directionsUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Itinéraire
+        <span aria-hidden="true">↗</span>
+      </a>
+      <button
+        mat-flat-button
+        type="button"
+        (click)="detailsRequested.emit(pharmacy())"
+      >
+        Détails
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,137 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.pharmacy-card {
+  height: 100%;
+  border: 1px solid #e6eee8;
+  border-radius: 17px;
+  box-shadow: 0 8px 22px rgb(24 73 49 / 5%);
+}
+
+.pharmacy-card mat-card-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.city {
+  margin: 0 0 0.35rem;
+  color: #16835d;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0;
+  color: #173a30;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.status-badge {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.status-badge > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status-open {
+  background: #e4f5ea;
+  color: #176f45;
+}
+
+.status-closed {
+  background: #fcebea;
+  color: #a13833;
+}
+
+.status-garde {
+  background: #fff3d9;
+  color: #805614;
+}
+
+.address {
+  display: flex;
+  gap: 0.45rem;
+  margin: 1.1rem 0;
+  color: #60736a;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.address > span {
+  color: #16835d;
+  font-size: 1.2rem;
+}
+
+.hours-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin-top: auto;
+  padding: 0.8rem 0;
+  border-top: 1px solid #edf1ed;
+  color: #60736a;
+  font-size: 0.82rem;
+}
+
+.hours-label {
+  color: #839087;
+}
+
+.hours-row strong {
+  color: #334c6e;
+}
+
+.distance {
+  margin-left: auto;
+  color: #16835d;
+  font-weight: 700;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.card-actions a,
+.card-actions button {
+  min-height: 42px;
+  flex: 1;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+@media (max-width: 450px) {
+  .pharmacy-card mat-card-content {
+    padding: 1rem;
+  }
+
+  .card-heading {
+    flex-direction: column;
+  }
+}

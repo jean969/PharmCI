@@ -1,0 +1,195 @@
+:root {
+  color-scheme: light;
+  --pharmci-primary: #126b4f;
+  --pharmci-accent: #16835d;
+  --pharmci-ink: #173a30;
+  --pharmci-muted: #60736a;
+  --pharmci-surface: #fff;
+  --mat-sys-primary: #126b4f;
+  --mat-sys-on-primary: #fff;
+  --mat-sys-primary-container: #d8f0e2;
+  --mat-sys-on-primary-container: #173a30;
+  --mat-sys-secondary: #53665e;
+  --mat-sys-on-secondary: #fff;
+  --mat-sys-surface: #fff;
+  --mat-sys-on-surface: #173a30;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--pharmci-surface);
+  color: var(--pharmci-ink);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 100;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.75rem 1rem;
+  transform: translateY(-160%);
+  border-radius: 8px;
+  background: #12392e;
+  color: #fff;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 3px solid #f1b85b;
+  outline-offset: 3px;
+}
+
+a,
+button,
+.mat-mdc-form-field {
+  transition:
+    transform 160ms ease-out,
+    opacity 160ms ease-out;
+}
+
+.mat-mdc-form-field:focus-within {
+  transform: translateY(-1px);
+}
+
+.mat-mdc-card {
+  transition:
+    transform 180ms ease-out,
+    opacity 180ms ease-out;
+}
+
+button:disabled {
+  transform: none;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 280ms ease-out,
+    transform 280ms ease-out;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.action-feedback-enter {
+  animation: action-feedback-in 220ms ease-out both;
+}
+
+.action-feedback-leave {
+  animation: action-feedback-out 160ms ease-in both;
+}
+
+.result-enter {
+  animation: result-enter 260ms ease-out both;
+}
+
+.result-leave {
+  animation: result-leave 160ms ease-in both;
+}
+
+@keyframes action-feedback-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes action-feedback-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes result-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes result-leave {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (hover: hover) {
+  a:hover,
+  button:not(:disabled):hover,
+  .mat-mdc-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+a:active,
+button:not(:disabled):active {
+  transform: scale(0.98);
+}

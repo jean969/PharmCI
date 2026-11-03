@@ -1,0 +1,212 @@
+<section class="page-hero" appScrollReveal>
+  <div class="page-hero-inner">
+    <p class="eyebrow">À propos de PHARMCI</p>
+    <h1>Faciliter l’accès aux informations pharmaceutiques</h1>
+    <p>
+      Un annuaire simple pour trouver et contacter une pharmacie en Côte
+      d’Ivoire.
+    </p>
+  </div>
+</section>
+
+<section class="mission-section" appScrollReveal>
+  <div class="mission-copy">
+    <p class="eyebrow">Notre mission</p>
+    <h2>Les bonnes informations, plus près de vous</h2>
+    <p>
+      PHARMCI est une plateforme web qui facilite la recherche de pharmacies
+      proches, ouvertes et disponibles sur le territoire ivoirien.
+    </p>
+    <p>
+      Elle rassemble les coordonnées, horaires et services indiqués dans les
+      fiches locales pour aider chacun à préparer son déplacement et à contacter
+      directement un établissement.
+    </p>
+    <a mat-flat-button routerLink="/pharmacies"
+      >Consulter l’annuaire <span aria-hidden="true">→</span></a
+    >
+  </div>
+  <mat-card class="mission-card">
+    <mat-card-content>
+      <span class="mission-symbol" aria-hidden="true">+</span>
+      <h2>PHARMCI</h2>
+      <p>
+        Une plateforme d’information et de localisation, pas une pharmacie en
+        ligne.
+      </p>
+      <div class="mission-stat">
+        <strong>{{ pharmacyCount }}</strong>
+        <span>fiches locales intégrées</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>
+
+<section class="values-section" appScrollReveal>
+  <div class="section-heading">
+    <p class="eyebrow">Nos valeurs</p>
+    <h2>Un service au bénéfice de tous</h2>
+  </div>
+  <div class="values-grid">
+    @for (value of values; track value.title) {
+      <mat-card class="value-card" appScrollReveal>
+        <mat-card-content>
+          <span class="value-symbol" aria-hidden="true">{{
+            value.symbol
+          }}</span>
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.text }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
+
+<section class="features-section" appScrollReveal>
+  <div class="section-heading">
+    <p class="eyebrow">Pourquoi PHARMCI ?</p>
+    <h2>Un parcours simple et pratique</h2>
+  </div>
+  <ul class="feature-list">
+    @for (feature of features; track feature) {
+      <li><span aria-hidden="true">✓</span>{{ feature }}</li>
+    }
+  </ul>
+</section>
+
+<section class="commitments-section" appScrollReveal>
+  <div class="section-heading">
+    <p class="eyebrow">Nos engagements</p>
+    <h2>Un annuaire, dans un cadre clair</h2>
+    <p>
+      PHARMCI facilite l’accès à l’information sans se substituer aux
+      professionnels de santé.
+    </p>
+  </div>
+  <div class="commitments-grid">
+    @for (commitment of commitments; track commitment.title) {
+      <article class="commitment-card" appScrollReveal>
+        <span aria-hidden="true">✓</span>
+        <div>
+          <h3>{{ commitment.title }}</h3>
+          <p>{{ commitment.text }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section id="contact-section" class="contact-section" appScrollReveal>
+  <div class="contact-intro">
+    <p class="eyebrow">Restons en contact</p>
+    <h2>Une question ou une suggestion ?</h2>
+    <p>
+      Le formulaire valide les informations localement. Aucun message n’est
+      envoyé tant qu’un service d’envoi n’est pas raccordé.
+    </p>
+  </div>
+
+  <mat-card class="contact-card">
+    <mat-card-content>
+      <form [formGroup]="contactForm" (ngSubmit)="submitContact()" novalidate>
+        <div class="form-grid">
+          <mat-form-field appearance="outline">
+            <mat-label>Nom et prénom</mat-label>
+            <input
+              matInput
+              formControlName="name"
+              autocomplete="name"
+              maxlength="100"
+              required
+            />
+            @if (
+              contactForm.controls.name.hasError("required") && submitted()
+            ) {
+              <mat-error
+                animate.enter="action-feedback-enter"
+                animate.leave="action-feedback-leave"
+                >Votre nom est requis.</mat-error
+              >
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Adresse e-mail</mat-label>
+            <input
+              matInput
+              type="email"
+              formControlName="email"
+              autocomplete="email"
+              maxlength="254"
+              required
+            />
+            @if (
+              contactForm.controls.email.hasError("required") && submitted()
+            ) {
+              <mat-error
+                animate.enter="action-feedback-enter"
+                animate.leave="action-feedback-leave"
+                >Votre adresse e-mail est requise.</mat-error
+              >
+            } @else if (
+              contactForm.controls.email.hasError("email") && submitted()
+            ) {
+              <mat-error
+                animate.enter="action-feedback-enter"
+                animate.leave="action-feedback-leave"
+                >Entrez une adresse e-mail valide.</mat-error
+              >
+            }
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Sujet</mat-label>
+          <input matInput formControlName="subject" maxlength="120" required />
+          @if (
+            contactForm.controls.subject.hasError("required") && submitted()
+          ) {
+            <mat-error
+              animate.enter="action-feedback-enter"
+              animate.leave="action-feedback-leave"
+              >Le sujet est requis.</mat-error
+            >
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Votre message</mat-label>
+          <textarea
+            matInput
+            formControlName="message"
+            rows="5"
+            maxlength="2000"
+            required
+          ></textarea>
+          @if (
+            contactForm.controls.message.hasError("required") && submitted()
+          ) {
+            <mat-error
+              animate.enter="action-feedback-enter"
+              animate.leave="action-feedback-leave"
+              >Le message est requis.</mat-error
+            >
+          }
+        </mat-form-field>
+
+        @if (contactStatus()) {
+          <p
+            class="form-status"
+            role="status"
+            animate.enter="action-feedback-enter"
+            animate.leave="action-feedback-leave"
+          >
+            {{ contactStatus() }}
+          </p>
+        }
+
+        <button mat-flat-button type="submit">Vérifier le formulaire</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>
