@@ -46,6 +46,12 @@ docker run --rm -p 8080:80 pharmci
 
 Le site sera accessible sur `http://localhost:8080`. Nginx redirige les routes SPA vers Angular et sert les fichiers compilés.
 
+## Déploiement GitHub Pages
+
+Le workflow `.github/workflows/deploy.yml` construit l’application avec le chemin `/PharmCI/`, puis publie automatiquement les fichiers compilés sur chaque push vers `main`. Il inclut aussi un `404.html` basé sur l’application pour permettre l’accès direct aux routes Angular.
+
+Dans les paramètres du dépôt GitHub, sous **Settings > Pages > Build and deployment**, sélectionnez **GitHub Actions** comme source. Le site est ensuite disponible à l’adresse `https://jean969.github.io/PharmCI/`.
+
 ## Structure
 
 ```text
